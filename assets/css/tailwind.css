@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'glassAntiqua';
+    src: url("~~/assets/fonts/GlassAntiqua-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'baloobhai';
+    src: url("~~/assets/fonts/BalooBhai-Regular.ttf");
+}
+
+
+@layer components{
+    .text-outline-black-bold{
+        text-shadow: 2px 2px 0px #000000, 2px 0px 0px #000000, 2px -2px 0px #000000, 0px -2px 0px #000000, -2px -2px 0px #000000, -2px 0px 0px #000000, -2px 2px 0px #000000, -2px 2px 0px #000000;
+    }
+    .text-outline-black-thin{
+        text-shadow: 1px 1px 0px #000000, 1px 0px 0px #000000, 1px -1px 0px #000000, 0px -1px 0px #000000, -1px -1px 0px #000000, -1px 0px 0px #000000, -1px 1px 0px #000000, -1px 1px 0px #000000;
+    }
+    .text-outline-white-bold{
+        text-shadow: 2px 2px 0px #FFFFFF, 2px 0px 0px #FFFFFF, 2px -2px 0px #FFFFFF, 0px -2px 0px #FFFFFF, -2px -2px 0px #FFFFFF, -2px 0px 0px #FFFFFF, -2px 2px 0px #FFFFFF, -2px 2px 0px #FFFFFF;
+    }
+    .text-outline-white-thin{
+        text-shadow: 1px 1px 0px #FFFFFF, 1px 0px 0px #FFFFFF, 1px -1px 0px #FFFFFF, 0px -1px 0px #FFFFFF, -1px -1px 0px #FFFFFF, -1px 0px 0px #FFFFFF, -1px 1px 0px #FFFFFF, -1px 1px 0px #FFFFFF;
+    }
+
+
+
+}
+
+
+
+@layer utilities {
+    @variants responsive {
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .no-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .no-scrollbar {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+      }
+    }
+  }
