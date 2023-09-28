@@ -123,12 +123,11 @@ const acceptDelete =()=>{
 /* BASE LINK */
 .link{
     @apply
-    border border-black rounded-full
-    px-10 py-2
-    flex items-center justify-between 
-    md:min-w-[24rem] md:w-fit w-screen h-fit 
+    border border-black md:rounded-full rounded-md
+    md:px-10 md:py-2 px-1 py-2
+    flex items-center justify-between gap-4 
+    max-w-[25rem]  h-fit  w-full
     scale-100 hover:scale-105 transition-all
-    gap-4
     font-baloobhai 
     relative overflow-hidden
 }
