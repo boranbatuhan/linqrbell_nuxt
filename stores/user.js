@@ -13,10 +13,11 @@ export const useUserStore = defineStore('user', {
             isPremium:false
         
             }
+
         }
     ),
     getters: {
-     fetUser:(state)=>{
+     getUser:(state)=>{
         return state.user
      }
     },
