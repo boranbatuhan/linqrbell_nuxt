@@ -1,9 +1,33 @@
 <template>
     <div class="link" :class="value.name">
+
+        <!-- modal save link  start -->
+        <div v-if="isSave" class="bg-inherit  w-full h-full absolute top-0 left-0 z-50 flex items-center justify-center flex-wrap gap-x-4 ">
+            <div  class="action text-lime-500" >
+                <Icon  icon="typcn:tick" class="w-full h-full" />
+            </div>
+            <p class="w-full text-center ">Do you want to save new values</p>
+            <button @click="acceptSave" class="rounded-full w-1/3 border border-black h-fit py-1 text-white scale-100 hover:scale-110 transition-all shrink-0 bg-green-500">Yes</button>
+            <button @click="isSave=false" class="rounded-full w-1/3 border border-black h-fit py-1 text-white scale-100 hover:scale-110 transition-all shrink-0 bg-red-500">No</button>
+        </div>
+        <!-- modal save link  end -->
+        <!-- modal discard link  start -->
+        <div v-if="isDiscard" class="bg-inherit  w-full h-full absolute top-0 left-0 z-50 flex items-center justify-center flex-wrap gap-x-4 ">
+            <div class="action text-rose-500" >
+                <Icon icon="typcn:times" class="w-full h-full" />
+            </div>
+            <p class="w-full text-center ">Do you want to discard changes</p>
+            <button @click="acceptDiscard" class="rounded-full w-1/3 border border-black h-fit py-1 text-white scale-100 hover:scale-110 transition-all shrink-0 bg-green-500">Yes</button>
+            <button @click="isDiscard=false" class="rounded-full w-1/3 border border-black h-fit py-1 text-white scale-100 hover:scale-110 transition-all shrink-0 bg-red-500">No</button>
+        </div>
+        <!-- modal discard link  end -->
         <!-- modal delete link  start -->
-        <div v-if="isDelete" class="bg-inherit w-full h-full absolute top-0 left-0 z-50 flex items-center justify-center flex-wrap gap-x-4 ">
-            <p class="w-full text-center mt-7">Do you want to delete</p>
-            <button class="rounded-full w-1/3 border border-black h-fit py-1 text-white scale-100 hover:scale-110 transition-all shrink-0 bg-green-500">Yes</button>
+        <div v-if="isDelete" class="bg-inherit  w-full h-full absolute top-0 left-0 z-50 flex items-center justify-center flex-wrap gap-x-4 ">
+            <div  class="action text-stone-200" >
+                <Icon icon="typcn:trash" class="w-full h-full" />
+            </div>
+            <p class="w-full text-center ">Do you want to delete</p>
+            <button @click="acceptDelete" class="rounded-full w-1/3 border border-black h-fit py-1 text-white scale-100 hover:scale-110 transition-all shrink-0 bg-green-500">Yes</button>
             <button @click="isDelete=false" class="rounded-full w-1/3 border border-black h-fit py-1 text-white scale-100 hover:scale-110 transition-all shrink-0 bg-red-500">No</button>
         </div>
         <!-- modal delete link  end -->
@@ -26,17 +50,21 @@
 
         <!-- buttons start -->
         <div class="flex items-center justify-evenly flex-col">
-            <!-- accept edit -->
-            <div @click="isEditting = !isEditting" class="action hover:text-lime-500" >
-            <Icon  :icon="isEditting ? 'typcn:tick' :'typcn:cog'" class="w-full h-full" />
+            <!-- open edit -->
+            <div @click="isEditting = !isEditting" v-if="!isEditting" :class="{'hover:text-lime-500':isEditting}" class="action " >
+                <Icon  icon="typcn:cog" class="w-full h-full" />
+            </div>
+            <!-- save edit -->
+            <div @click="saveEdit" v-if="isEditting" :class="{'hover:text-lime-500':isEditting}" class="action " >
+                <Icon  icon="typcn:tick" class="w-full h-full" />
             </div>
             <!-- discard edit -->
-            <div  @click="isEditting = !isEditting" v-if="isEditting" class="action hover:text-rose-500" >
+            <div  @click="discardEdit" v-if="isEditting" class="action hover:text-rose-500" >
                 <Icon icon="typcn:times" class="w-full h-full" />
             </div>
 
-            <!-- delete -->
-            <div @click="isDelete = !isDelete" v-if="isEditting" class="action hover:text-stone-200" >
+            <!-- delete link -->
+            <div @click="deleteLink" v-if="isEditting" class="action hover:text-stone-200" >
                 <Icon icon="typcn:trash" class="w-full h-full" />
             </div>
         </div>
@@ -49,6 +77,8 @@ import { Icon } from '@iconify/vue';
 
 const isEditting = ref(false)
 const isDelete = ref(false)
+const isSave = ref(false)
+const isDiscard = ref(false)
 const editValues= reactive({
     link:"",
     label:""
@@ -56,6 +86,35 @@ const editValues= reactive({
 defineProps({
     value:Object
 })
+
+
+// save edit
+const saveEdit=()=>{
+    isSave.value=true
+}
+// discard edit
+const discardEdit=()=>{
+    isDiscard.value=true
+}
+// delete link
+const deleteLink =()=>{
+    isDelete.value=true
+}
+
+
+
+// accept save edit
+const acceptSave =()=>{
+
+}
+// accept discard edit
+const acceptDiscard =()=>{
+
+}
+// accept delete link
+const acceptDelete =()=>{
+
+}
 </script>
 
 <style>
