@@ -105,14 +105,17 @@ const deleteLink =()=>{
 
 // accept save edit
 const acceptSave =()=>{
+    isSave.value=false
 
 }
 // accept discard edit
 const acceptDiscard =()=>{
+    isDiscard.value=false
 
 }
 // accept delete link
 const acceptDelete =()=>{
+    isDelete.value=false
 
 }
 </script>

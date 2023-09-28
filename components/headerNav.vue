@@ -1,13 +1,23 @@
 <script setup>
 
 const { x, y } = useWindowScroll()
-const showHeader=ref(true)
-const route =useRoute().name
+const showHeader=ref(false)
 const router =useRouter()
-console.log('route :>> ', route);
+
+
+
+if(router.currentRoute.value.name =='profile-edit' || router.currentRoute.value.name =='error' || router.currentRoute.value.name =='show' || router.currentRoute.value.name =='show-user' )
+    {
+        showHeader.value=false
+    }
+    else{
+        showHeader.value=true
+    }
+
+
 
 router.beforeResolve((to, from, next) => {
-    if(to.name =='profile-edit')
+    if(to.name =='profile-edit' || to.name =='error' || to.name =='show' || to.name =='show-user' )
     {
         showHeader.value=false
     }
@@ -29,7 +39,7 @@ const scrollTop=()=>{
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="28" viewBox="0 0 448 512"><path fill="currentColor" d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3L86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>    
         </div>
 
-        <div v-if="showHeader" :class="{'!py-0 !px-0 !rounded-none !opacity-70':y>=300}" class=" headerContainer hover:!opacity-100  h-fit !pb-10 opacity-100 w-full   fixed top-0 z-[999] group px-16 py-10 mx-auto ">
+        <div v-if="showHeader==true" :class="{'!py-0 !px-0 !rounded-none !opacity-70':y>=300}" class=" headerContainer hover:!opacity-100  h-fit !pb-10 opacity-100 w-full   fixed top-0 z-[999] group px-16 py-10 mx-auto ">
             <div class="header-long transition-all group-hover:!mt-0" :class="{'!rounded-none ':y>=300, '-mt-32':y>=500}">
                 <!-- home btn start-->
                 <nuxt-link to="/">

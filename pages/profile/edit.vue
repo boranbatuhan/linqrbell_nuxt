@@ -4,8 +4,12 @@
 
         <!-- buttons start -->
         <div class="flex items-center justify-start flex-col mx-auto container">
-            <button @click="goPage('/profile')" class="px-3 w-44 py-1 rounded-2xl font-bold bg-fuchsia-950 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all">Save</button>
+            
             <ul class="flex flex-col items-center justify-center gap-4 my-7 w-full px-2" v-auto-animate>
+                <li class="flex items-center justify-between w-full md:w-fit">
+                    <button @click="goBack" class="px-3 w-full md:w-44 py-1 rounded-2xl font-bold bg-fuchsia-950 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all">Back</button>
+                    <button @click="goPage('/profile')" class="px-3 w-full md:w-44 py-1 rounded-2xl font-bold bg-fuchsia-950 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all">Save</button>
+                </li>
                 <li v-for="(l,index) in user.links" :key="index" class="w-full flex items-center justify-center" >
                     <linkedit :value="l"/> 
                 </li>
@@ -24,7 +28,11 @@ const router = useRouter()
 
 const goPage = page =>{
     userr.addYoutube()
-    // router.push(`${page}`)
+    router.push(`${page}`)
+}
+const goBack = () =>{
+    userr.addYoutube()
+    router.back()
 }
 
 </script>
