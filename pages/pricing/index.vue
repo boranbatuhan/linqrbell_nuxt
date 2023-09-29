@@ -13,7 +13,15 @@
             </div>
             <!-- free plan end -->
             <!-- premium plan start -->
-            <nuxt-link to="/pricing/upgrade" class="flex text-xl items-center justify-start flex-col border-2 border-emerald-950 w-80 shrink-0 hover:bg-emerald-500 bg-emerald-300 text-emerald-950 hover:text-white rounded-lg py-10">
+            <nuxt-link to="/pricing/upgrade" class="flex text-xl items-center justify-start flex-col border-2 border-emerald-950 w-80 shrink-0 hover:bg-emerald-500 bg-emerald-300 text-emerald-950 hover:text-white group rounded-lg py-10 relative">
+                
+                <span class="absolute -top-8 -right-8 w-20 h-20">
+                    <div class="w-full h-full relative flex items-center justify-center">
+                        <Icon icon="typcn:starburst"  class="w-20 h-20 absolute"/>
+                        <p class="text-white rotate-12 group-hover:!text-emerald-950 relative">Best</p>
+                    </div>
+                </span>
+                
                 <p class="text-4xl">Premium Plan</p>
                 <span class="w-10/12 h-1 bg-gradient-to-r from-transparent via-emerald-950 to-transparent"></span>
                 <p>10$ - Once</p>
@@ -29,6 +37,7 @@
 </template>
 
 <script setup>
+import { Icon } from '@iconify/vue';
 
 </script>
 
