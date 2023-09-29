@@ -62,7 +62,7 @@
 <script setup>
 import { Icon } from '@iconify/vue';
 
-const openAdd = ref(true)
+const openAdd = ref(false)
 const isAdd = ref(false)
 const addForm = reactive({
     label:"",

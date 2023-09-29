@@ -15,6 +15,7 @@
             
         </div>
         <!-- buttons end -->
+        <button @click="goPage(`/show/${user.uid}`)" class="px-3  py-1 rounded-2xl font-bold bg-fuchsia-950 my-10 md:w-52 w-11/12 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all">Show Profile</button>
         
     </div>
 </template>
