@@ -2,10 +2,10 @@ export const usePlatforms = defineStore({
   id: 'platforms',
   state: () => ({ 
     supportedPlatforms:[
+      "custom",
         "github",
-        "custom",
         "youtube",
-        "linkedin",
+        "linkedin"
       ],
   }),
   getters: {

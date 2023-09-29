@@ -130,7 +130,7 @@ const acceptDelete =()=>{
     md:px-10 md:py-2 px-1 py-2
     flex items-center justify-between gap-4 
     max-w-[25rem]  h-fit  w-full
-    scale-100 hover:scale-105 transition-all
+
     font-baloobhai 
     relative overflow-hidden
 }
@@ -150,21 +150,26 @@ const acceptDelete =()=>{
 /* GITHUB */
 .github{
     @apply
-    bg-zinc-900
+    !bg-zinc-900
 }
 /* LINKEDIN */
 .linkedin{
     @apply
-    bg-blue-900
+    !bg-blue-900
 }
 /* youtube */
 .youtube{
     @apply
-    bg-red-900
+    !bg-red-900
 }
 /* PORTFOLIO */
 .portfolio{
     @apply
-    bg-amber-900
+    !bg-amber-900
+}
+/* CUSTOM */
+.custom{
+    @apply
+    !bg-fuchsia-900
 }
 </style>
