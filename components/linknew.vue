@@ -22,11 +22,11 @@
             <input v-model="addForm.label" autocomplete="off" class="px-3 py-1 ring-0 border rounded-full outline-transparent focus:outline-fuchsia-950 outline-2" type="text" name="label" placeholder="new label" id="label">
             <input v-model="addForm.link" autocomplete="off" class="px-3 py-1 ring-0 border rounded-full outline-transparent focus:outline-fuchsia-950 outline-2" type="text" name="link" placeholder="new link" id="link">
             <div class="flex gap-4 w-full justify-between text-white">
-                <div class="border select-none w-8 group" @click="eksi">
+                <div class=" select-none w-8 group" @click="backTemplate">
                     <Icon icon="typcn:arrow-left-thick" class="transition-all scale-100 group-hover:scale-110 w-full h-full"/>
                 </div>
                 <p>{{ selectedPlatform }}</p>
-                <div class="border select-none w-8 group" @click="arti">
+                <div class=" select-none w-8 group" @click="forwTemplate">
                     <Icon icon="typcn:arrow-right-thick" class="transition-all scale-100 group-hover:scale-110 w-full h-full"/>
                 </div>
             </div>
@@ -37,12 +37,12 @@
 
     <!-- buttons start -->
     <div class="flex items-center justify-evenly flex-col">
-        <!-- open edit -->
-        <div @click="openAdd=!openAdd" v-if="!openAdd" class="action " >
+        <!-- open  -->
+        <div @click="openAdd=true" v-if="!openAdd" class="action " >
             <Icon  icon="typcn:plus" class="w-full h-full" />
         </div>
-        <!-- save edit -->
-        <div @click="isAdd=true" v-if="openAdd"  class="action " >
+        <!-- save  -->
+        <div @click="saveLink" v-if="openAdd" class="action " >
             <Icon  icon="typcn:tick" class="w-full h-full" />
         </div>
         <!-- delete inputs  -->
@@ -74,7 +74,7 @@ const counter = ref(-1)
 
 
 
-const eksi = ()=>{
+const backTemplate = ()=>{
     counter.value -=1
     if(counter.value <=-1)
     {
@@ -83,7 +83,7 @@ const eksi = ()=>{
     selectedPlatform.value = platforms[counter.value]
     console.log('selectedPlatform.value :>> ', selectedPlatform.value);
 }
-const arti = ()=>{
+const forwTemplate = ()=>{
     counter.value +=1
     if(counter.value >= platforms.length)
     {
@@ -91,6 +91,18 @@ const arti = ()=>{
     }
     selectedPlatform.value = platforms[counter.value]
     console.log('selectedPlatform.value :>> ', selectedPlatform.value);
+}
+const saveLink =()=>{
+    if(addForm.link.includes(selectedPlatform.value))
+    {
+        console.log("link doğru")
+        isAdd.value=true
+    }else
+    {
+        console.log("link yanlıs")
+        isAdd.value=false
+    }
+
 }
 const acceptAdd = ()=>{
     isAdd.value=false
