@@ -146,30 +146,4 @@ const acceptDelete =()=>{
 }
 
 
-/* ---------------LABELS------------------ */
-/* GITHUB */
-.github{
-    @apply
-    !bg-zinc-900
-}
-/* LINKEDIN */
-.linkedin{
-    @apply
-    !bg-blue-900
-}
-/* youtube */
-.youtube{
-    @apply
-    !bg-red-900
-}
-/* PORTFOLIO */
-.portfolio{
-    @apply
-    !bg-amber-900
-}
-/* CUSTOM */
-.custom{
-    @apply
-    !bg-fuchsia-900
-}
 </style>

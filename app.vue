@@ -19,4 +19,6 @@ onMounted(() => {
 *{
   scroll-behavior: smooth !important;
 }
+
+
 </style>

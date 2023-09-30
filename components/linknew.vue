@@ -20,7 +20,7 @@
         <!-- add start -->
         <div v-if="openAdd" class="flex items-start justify-center flex-col gap-2 text-black">
             <input v-model="addForm.label" autocomplete="off" class="px-3 py-1 ring-0 border rounded-full outline-transparent focus:outline-fuchsia-950 outline-2" type="text" name="label" placeholder="new label" id="label">
-            <input v-model="addForm.link" autocomplete="off" class="px-3 py-1 ring-0 border rounded-full outline-transparent focus:outline-fuchsia-950 outline-2" type="text" name="link" placeholder="new link" id="link">
+            <input v-model="addForm.link" autocomplete="off" class="px-3 py-1 ring-0 border rounded-full outline-transparent focus:outline-fuchsia-950 outline-2" type="text" name="link" placeholder="new link" id="link" :class="{'border-red-600 bg-red-200 ':linkError==true,'border-white bg-white ':linkError==false}">
             <div class="flex gap-4 w-full justify-between text-white">
                 <div class=" select-none w-8 group" @click="backTemplate">
                     <Icon icon="typcn:arrow-left-thick" class="transition-all scale-100 group-hover:scale-110 w-full h-full"/>
@@ -64,13 +64,14 @@ import { Icon } from '@iconify/vue';
 
 const openAdd = ref(false)
 const isAdd = ref(false)
+const linkError = ref(false)
 const addForm = reactive({
     label:"",
     link:""
 })
 const platforms = usePlatforms().getPlatforms
 const selectedPlatform = ref("custom")
-const counter = ref(-1)
+const counter = ref(0)
 
 
 
@@ -92,7 +93,9 @@ const forwTemplate = ()=>{
     selectedPlatform.value = platforms[counter.value]
     console.log('selectedPlatform.value :>> ', selectedPlatform.value);
 }
+
 const saveLink =()=>{
+    if(selectedPlatform.value != 'custom'){
     if(addForm.link.includes(selectedPlatform.value))
     {
         console.log("link doğru")
@@ -101,6 +104,14 @@ const saveLink =()=>{
     {
         console.log("link yanlıs")
         isAdd.value=false
+        linkError.value=true
+        setTimeout(() => {
+            linkError.value=false
+        }, 1000);
+    }
+    }
+    else{
+        isAdd.value=true
     }
 
 }
@@ -119,6 +130,7 @@ const clearInputs = ()=>{
     addForm.label=""
     selectedPlatform.value="custom"
     counter.value=0
+    linkError.value=false
 }
 </script>
 
