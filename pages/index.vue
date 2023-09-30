@@ -10,7 +10,9 @@
                         <input v-model="userid" class="px-3 py-2 pl-28 w-full md:w-56 rounded-lg peer focus:outline-2 outline-fuchsia-400 transition-all placeholder:text-zinc-500 text-zinc-950 focus:text-zinc-500" type="text" id="section-get" placeholder="yourname">
                         <p :class="{'!text-zinc-500':userid=='',}" class="absolute top-1/2 -translate-y-1/2 left-2 peer-focus:text-zinc-500 text-zinc-950">linqrbell.com/</p>
                     </label>
-                    <button class="px-3 py-2 rounded-lg bg-fuchsia-950 text-fuchsia-300 mx-4 border hover:border-fuchsia-500 border-transparent transition-all">Collect Your Own Linqrbell</button>
+                    <nuxt-link to="/signup">
+                        <button class="px-3 py-2 rounded-lg bg-fuchsia-950 text-fuchsia-300 mx-4 border hover:border-fuchsia-500 border-transparent transition-all">Collect Your Own</button>
+                    </nuxt-link>
                 </div>
             </div>
             <animFirst  data-aos="fade-right" class="img-container"/>
@@ -90,8 +92,10 @@
                         <input v-model="userid" class="px-3 py-2 pl-28 w-full md:w-56 rounded-lg peer focus:outline-2 outline-orange-400 transition-all placeholder:text-zinc-500 text-zinc-950 focus:text-zinc-500" type="text" id="footer-get" placeholder="yourname">
                         <p :class="{'!text-zinc-500':userid=='',}" class="absolute top-1/2 -translate-y-1/2 left-2 peer-focus:text-zinc-500 text-zinc-950">linqrbell.com/</p>
                     </label>
+                    <nuxt-link to="/signup">
                     <button class="px-3 py-2 rounded-lg bg-orange-500 mx-4 border hover:border-orange-950 border-transparent transition-all">Collect Your Own Linqrbell</button>
-                </div>
+                    </nuxt-link>
+                 </div>
             </div>
         <!-- section4 end -->
 
@@ -107,8 +111,12 @@
                 <p class="text-4xl w-full text-center text-black/90">You Have Reached the End</p>
                 <p class="text-3xl w-full text-center text-black/90">What will you do now</p>
                 <div class="w-full flex my-4 items-center justify-center flex-col md:flex-row gap-10 md:gap-4">
-                    <button class="px-3 py-2 text-xl rounded-lg  text-black bg-teal-300 drop-shadow-lg mx-4 border hover:border-teal-950 border-transparent transition-all">I'm already unique</button>
-                    <button @click="goProfile" class="px-3 py-2 text-xl rounded-lg  text-black bg-teal-300 drop-shadow-lg mx-4 border hover:border-teal-950 border-transparent transition-all">I want to be unique</button>
+                    <nuxt-link to="/login">
+                        <button class="px-3 py-1 text-xl rounded-lg  text-black bg-teal-300 drop-shadow-lg mx-4 border hover:border-teal-950 border-transparent transition-all flex items-center justify-center gap-2 h-12"><Icon class="h-full w-fit"  icon="typcn:key"/>I'm already unique</button>
+                    </nuxt-link>
+                    <nuxt-link to="/signup">
+                        <button class="px-3 py-1 text-xl rounded-lg  text-black bg-teal-300 drop-shadow-lg mx-4 border hover:border-teal-950 border-transparent transition-all flex items-center justify-center gap-2 h-12"><Icon class="h-full w-fit"  icon="typcn:lock-open"/>I want to be unique</button>
+                    </nuxt-link>
 
                 </div>
             </div>
@@ -123,12 +131,10 @@
 </template>
 
 <script setup>
+import { Icon } from '@iconify/vue';
 const userid = ref("")
 
 const router = useRouter()
-const goProfile = ()=>{
-    router.push("/profile")
-}
 
 
 </script>

@@ -24,7 +24,7 @@
                     </label>
                 </div>
             </div>
-            <button @click="signUp" :disabled="!userForm.accept" :class="{'text-xl !px-16':userForm.accept}" class="px-4 py-2 rounded-full disabled:pointer-events-none disabled:saturate-0 bg-lime-950 scale-100 hover:scale-110 transition-all text-white">sign up</button>
+            <button @click="signUp" :disabled="!userForm.accept" :class="{'text-xl !px-16':userForm.accept}" class="px-4 py-2 rounded-lg disabled:pointer-events-none disabled:saturate-0 bg-lime-950 scale-100 hover:scale-110 transition-all text-white">sign up</button>
         </div>
 
     </div>

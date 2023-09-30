@@ -11,7 +11,7 @@
                 <p  class="absolute leading-10  w-28   h-full px-2 top-1/2 -translate-y-1/2 left-2 peer-focus:text-zinc-500 text-zinc-950 transition-all select-none">Password : </p>
             </label>
             <NuxtLink to="/signup" class="ml-auto cursor-pointer hover:underline hover:text-cyan-100 text-sm -mt-5 ">Dont you have linqrbell ? get quick...</NuxtLink>
-            <button class="ml-auto bg-cyan-600 hover:bg-cyan-950 text-white px-4 py-1 rounded-full -mt-4">Log in</button>
+            <button class="ml-auto bg-cyan-600 hover:bg-cyan-950 text-white px-4 py-1 rounded-lg -mt-4">Log in</button>
         </div>
     </div>
 </template>

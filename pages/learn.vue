@@ -5,7 +5,7 @@
                          <div id="shaker" class=" p-2 text-black shake transition-all">{{ message }}</div>
                     </div>
                 <input v-model="pass" type="text" class="mt-2 p-2 md:w-96 w-11/12 text-black  focus:outline-indigo-900 rounded-lg">
-                    <button class="flex items-center justify-center gap-4 h-8 bg-indigo-700 hover:bg-indigo-950 transition-all px-6 py-1 rounded-full"> <Icon icon="fa6-solid:paper-plane"/> Send</button>
+                    <button class="flex items-center justify-center gap-4 h-8 bg-indigo-700 hover:bg-indigo-950 transition-all px-6 py-1 rounded-lg"> <Icon icon="fa6-solid:paper-plane"/> Send</button>
         </div>
     </div>
 </template>
@@ -14,7 +14,7 @@
 import { Icon } from '@iconify/vue';
 
 const pass = ref("")
-const message = ref("Write to us what you want to learn")
+const message = ref("What happened ?")
 
 watch(pass,(newV,oldV)=>{
     
@@ -25,7 +25,7 @@ watch(pass,(newV,oldV)=>{
         document.getElementById("shaker").classList.remove("blur-[1px]")
         document.getElementById("shaker").classList.remove("text-xl")
         document.getElementById("shaker").classList.remove("text-red-700")
-        message.value="Write to us what you want to learn"
+        message.value="What happened ?"
 
 
     }else if(newV.length > 20)

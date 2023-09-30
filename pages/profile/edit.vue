@@ -9,8 +9,8 @@
             
             <ul class="flex flex-col items-center justify-center gap-4 my-7 w-full px-2" v-auto-animate>
                 <li class="flex items-center justify-between w-full md:w-fit">
-                    <button @click="goBack" class="px-3 w-full md:w-44 py-1 rounded-2xl font-bold bg-fuchsia-950 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all">Back</button>
-                    <button @click="goPage('/profile')" class="px-3 w-full md:w-44 py-1 rounded-2xl font-bold bg-fuchsia-950 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all">Save</button>
+                    <button @click="goBack" class="px-3 h-8 w-full md:w-44 py-1 rounded-2xl font-bold bg-fuchsia-950 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all flex items-center justify-center gap-2"><Icon class="h-full w-fit"  icon="typcn:arrow-back"/>Back</button>
+                    <button @click="goPage('/profile')" class="px-3 h-8 w-full md:w-44 py-1 rounded-2xl font-bold bg-fuchsia-950 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all flex items-center justify-center gap-2"><Icon class="h-full w-fit"  icon="typcn:folder-open"/>Save</button>
                 </li>
                 <!-- ADD NEW START -->
                 <li class="w-full ">
@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-
+import { Icon } from '@iconify/vue';
 
 
 const {user} = useUserStore()

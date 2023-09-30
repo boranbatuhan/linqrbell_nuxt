@@ -17,7 +17,7 @@
                     <input v-model.number="card.ccv" @keydown="filterInput($event)"  class="px-3 bg-white h-12 pl-20 w-1/2 md:w-32 rounded-lg peer focus:outline-2 leading-10 outline-cyan-400 transition-all placeholder:text-zinc-500 text-zinc-950 focus:text-zinc-500" type="text" maxlength="3" id="cardcv" placeholder="012">
                     <p  class="absolute leading-10  w-16   h-full px-2 top-1/2 -translate-y-1/2 left-2 peer-focus:text-zinc-500 text-zinc-950 transition-all select-none">Ccv </p>
                 </label>
-                <button @click="pay"  class=" disabled:saturate-0 disabled:px-5 px-10 py-1 ml-auto bg-emerald-950 text-white rounded-full">Pay</button>
+                <button @click="pay"  class=" disabled:saturate-0 disabled:px-5 px-10 py-1 ml-auto bg-emerald-950 text-white rounded-lg">Pay</button>
             </div>
             <!-- free plan end -->
           
