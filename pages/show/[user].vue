@@ -23,7 +23,7 @@
             <!-- links start -->
             <li>
                 <ul>
-                    <li v-for="(link,index) in user.links" :key="index">{{ link.name }}</li>
+                    <li v-for="(link,index) in user.links" :key="index">{{ link }}</li>
                 </ul>
             </li>
             <!-- links end -->
