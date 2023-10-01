@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen border-y-[1rem] bg-blue-400 border-blue-950 font-baloobhai  text-blue-600">
+    <div :class="user.theme" class="min-h-screen border-y-[1rem] font-baloobhai">
 
 
     <div class="container mx-auto flex flex-col items-center justify-start my-7 p-2 font-baloobhai">
@@ -16,7 +16,7 @@
 
             <!-- bio start -->
             <li class="w-80 text-sm text-center">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque est quibusdam rerum ut impedit veritatis.</p>
+                <p>{{ user.bio }}</p>
             </li>
             <!-- bio end -->
 

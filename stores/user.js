@@ -10,8 +10,10 @@ export const useUserStore = defineStore('user', {
                 {name:"linkedin", url:"https://linkedin.com/in/batuhanboran", label:"Linkedin"},
                 {name:"portfolio", url:"https://batuhanboran.com/", label:"Personal Site"}
             ],
-            isPremium:false
-        
+            bio:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque est quibusdam rerum ut impedit veritatis.",
+            isPremium:false,
+            theme:"blue"
+            
             }
 
         }
@@ -25,5 +27,11 @@ export const useUserStore = defineStore('user', {
       addYoutube() {
         this.user.links.push({name:"youtube", url:"https://youtube.com/", label:"Hi youtuuuuppp"})
       },
+      setColorTheme(colorValue){
+        this.user.theme = colorValue
+      },
+      setBio(bioValue){
+        this.user.bio = bioValue
+      }
     },
   })
