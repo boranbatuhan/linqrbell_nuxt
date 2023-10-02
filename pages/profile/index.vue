@@ -15,7 +15,7 @@
             
         </div>
         <div class="my-7 flex md:items-center md:justify-center items-start justify-center w-full md:gap-7 gap-4 flex-col md:flex-row">
-            <button @click="goPage(`/show/${user.uid}`)" class="px-3 h-8  py-1 rounded-lg font-bold bg-fuchsia-950  md:w-52 w-11/12 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all flex items-center justify-center gap-2"><Icon class="h-full w-fit"  icon="typcn:user"/> Show Profile</button>
+            <button @click="goPage(`/${user.uid}`)" class="px-3 h-8  py-1 rounded-lg font-bold bg-fuchsia-950  md:w-52 w-11/12 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all flex items-center justify-center gap-2"><Icon class="h-full w-fit"  icon="typcn:user"/> Show Profile</button>
             <button @click="goPage(`/profile/me`)" class="px-3 h-8  py-1 rounded-lg font-bold bg-fuchsia-950  md:w-52 w-11/12 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all flex items-center justify-center gap-2"><Icon class="h-full w-fit"  icon="typcn:edit"/> Edit Profile</button>
         </div>
         <!-- buttons end -->

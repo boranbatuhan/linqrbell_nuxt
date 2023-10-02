@@ -5,8 +5,7 @@ const showHeader=ref(false)
 const router =useRouter()
 
 
-
-if(router.currentRoute.value.name =='profile-edit' || router.currentRoute.value.name =='error' || router.currentRoute.value.name =='show' || router.currentRoute.value.name =='show-user' )
+if(router.currentRoute.value.name =='profile-edit' || router.currentRoute.value.name =='error' || router.currentRoute.value.name =='user' )
     {
         showHeader.value=false
     }
@@ -17,7 +16,7 @@ if(router.currentRoute.value.name =='profile-edit' || router.currentRoute.value.
 
 
 router.beforeResolve((to, from, next) => {
-    if(to.name =='profile-edit' || to.name =='error' || to.name =='show' || to.name =='show-user' )
+    if(to.name =='profile-edit' || to.name =='error' ||  to.name =='user' )
     {
         showHeader.value=false
     }

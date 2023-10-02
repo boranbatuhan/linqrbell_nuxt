@@ -76,3 +76,57 @@
     @apply
     !bg-fuchsia-900
 }
+
+
+
+/* -----------------------COLOR THEME------------------ */
+
+.red{
+    @apply
+    !text-red-600 !bg-red-500 !border-red-950
+}
+.amber{
+    @apply
+    !text-amber-700 !bg-amber-500 !border-amber-950
+}
+.blue{
+    @apply
+    !text-blue-700 !bg-blue-500 !border-blue-950
+}
+.green{
+    @apply
+    !text-green-700 !bg-green-500 !border-green-950
+}
+.fuchsia{
+    @apply
+    !text-fuchsia-700 !bg-fuchsia-500 !border-fuchsia-950
+}
+
+.cyan{
+    @apply
+    !text-cyan-700 !bg-cyan-500 !border-cyan-950
+}
+.neutral{
+    @apply
+    !text-neutral-700 !bg-neutral-500 !border-neutral-950
+}
+.lime{
+    @apply
+    !text-lime-700 !bg-lime-500 !border-lime-950
+}
+.teal{
+    @apply
+    !text-teal-700 !bg-teal-500 !border-teal-950
+}
+.emerald{
+    @apply
+    !text-emerald-700 !bg-emerald-500 !border-emerald-950
+}
+.indigo{
+    @apply
+    !text-indigo-700 !bg-indigo-500 !border-indigo-950
+}
+.rose{
+    @apply
+    !text-rose-700 !bg-rose-500 !border-rose-950
+}

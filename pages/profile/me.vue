@@ -9,7 +9,7 @@
                 <textarea name="bio" id="bio" @keydown.enter.prevent v-model="tempBio" class="my-4 p-2 text-inherit w-80 text-center resize-none focus:outline-inherit !bg-inherit  focus:!bg-white hover:!bg-white/20 rounded-lg no-scrollbar h-32" spellcheck="false"></textarea>
             </div>
             <div class="flex items-center justify-center gap-3 w-80">
-                <nuxt-link :to="`/show/${user.uid}`" class="w-full basis-1/2">
+                <nuxt-link :to="`/${user.uid}`" class="w-full basis-1/2">
                     <button  class="flex items-center justify-center w-full gap-2 h-8 bg-white rounded-lg border border-black text-black px-3 py-1 scale-100 hover:scale-105 transition-all">
                         <Icon icon="typcn:user" class="h-full w-fit"/>
                         Show me
@@ -58,54 +58,6 @@ const saveTheme = ()=> {
 </script>
 
 <style>
-.red{
-    @apply
-    !text-red-600 !bg-red-500 !border-red-950
-}
-.amber{
-    @apply
-    !text-amber-700 !bg-amber-500 !border-amber-950
-}
-.blue{
-    @apply
-    !text-blue-700 !bg-blue-500 !border-blue-950
-}
-.green{
-    @apply
-    !text-green-700 !bg-green-500 !border-green-950
-}
-.fuchsia{
-    @apply
-    !text-fuchsia-700 !bg-fuchsia-500 !border-fuchsia-950
-}
 
-.cyan{
-    @apply
-    !text-cyan-700 !bg-cyan-500 !border-cyan-950
-}
-.neutral{
-    @apply
-    !text-neutral-700 !bg-neutral-500 !border-neutral-950
-}
-.lime{
-    @apply
-    !text-lime-700 !bg-lime-500 !border-lime-950
-}
-.teal{
-    @apply
-    !text-teal-700 !bg-teal-500 !border-teal-950
-}
-.emerald{
-    @apply
-    !text-emerald-700 !bg-emerald-500 !border-emerald-950
-}
-.indigo{
-    @apply
-    !text-indigo-700 !bg-indigo-500 !border-indigo-950
-}
-.rose{
-    @apply
-    !text-rose-700 !bg-rose-500 !border-rose-950
-}
 
 </style>

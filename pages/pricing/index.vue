@@ -1,6 +1,6 @@
 <template>
-    <div class="min-h-screen border-y-[1rem] bg-emerald-400 border-emerald-950 font-baloobhai text-white">
-        <div class="container mx-auto flex items-start justify-center h-fit py-36 gap-4 flex-wrap">
+    <div class="min-h-screen flex items-center justify-center border-y-[1rem] bg-emerald-400 border-emerald-950 font-baloobhai text-white ">
+        <div class="container mx-auto flex items-center justify-center h-full  gap-4 flex-wrap">
             <!-- free plan start -->
             <div class="flex text-xl items-center justify-start flex-col border-2 border-emerald-950 w-80 shrink-0 hover:bg-emerald-500 bg-emerald-300 text-emerald-950 hover:text-white rounded-lg py-10">
                 <p class="text-4xl">Free Plan</p>

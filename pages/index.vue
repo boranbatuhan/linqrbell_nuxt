@@ -1,6 +1,6 @@
 <template>
     <div>
-        <!-- section1 start -->
+        <!-- section1 + btn start-->
         <div    class="section-container pt-16 md:pt-0 bg-fuchsia-400 text-fuchsia-950 border-y-[1rem] border-y-fuchsia-950 ">
             <div  class="sub-container">
                 <h1 class="text-5xl w-full text-right font-extrabold px-5 drop-shadow-md">Combine all links under one link.</h1>
@@ -17,7 +17,7 @@
             </div>
             <animFirst  data-aos="fade-right" class="img-container"/>
         </div>
-        <!-- section1 end -->
+        <!-- section1 + btn end -->
 
         
         <!-- section2 start -->
@@ -79,7 +79,7 @@
         </div>
         <!-- section3 end -->
 
-        <!-- section4 start -->
+        <!-- section4 + btn start -->
         <div class="w-full pb-32 bg-orange-400 flex flex-col items-center justify-center gap-2 font-baloobhai border-y-[1rem] border-y-orange-950">
                 <div class="flex items-center justify-center pb-16 py-8 gap-4 select-none w-full">
                     <img draggable="false" src="~~/assets/imgs/logo.png" class="w-8 h-8">
@@ -97,9 +97,9 @@
                     </nuxt-link>
                  </div>
             </div>
-        <!-- section4 end -->
+        <!-- section4 + btn end -->
 
-        <!-- section5 start -->
+        <!-- section5 + btn start -->
      
             <div class="w-full p-10  h-fit bg-teal-400 flex flex-col items-center justify-center gap-2 font-baloobhai border-y-[1rem] border-y-teal-950">
                 <div class="md:w-fit w-full p-10 px-0 md:px-20 my-10 rounded-3xl bg-grad bg-hue-anim flex items-center justify-center  gap-4 select-none  ">
@@ -120,7 +120,7 @@
 
                 </div>
             </div>
-        <!-- section5 end -->
+        <!-- section5 + btn end -->
         
         <!-- footer start -->
         <myfooter/>
@@ -133,10 +133,6 @@
 <script setup>
 import { Icon } from '@iconify/vue';
 const userid = ref("")
-
-const router = useRouter()
-
-
 </script>
 
 <style scoped>

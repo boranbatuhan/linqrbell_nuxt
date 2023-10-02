@@ -4,14 +4,18 @@
             <p class="text-6xl">Sign up to Linqrbell</p>
             <p class="text-base tracking-widest">fill the blank</p>
             <div class=" flex my-4 items-center justify-center flex-col gap-4 w-fit">
+                <!-- username input start -->
                 <label for="userid" class="relative flex items-center justify-start h-10 ">
                     <input v-model="userForm.uid" class="px-3 bg-white h-12 pl-32 w-full md:w-96 rounded-lg peer focus:outline-2 leading-10 outline-lime-400 transition-all placeholder:text-zinc-500 text-zinc-950 focus:text-zinc-500" type="text" id="userid" placeholder="yourname">
                     <p :class="{'!text-zinc-500':userForm.uid=='', '!bg-white   ':userForm.uid !='',}" class="absolute leading-10  w-28 bg-lime-400  h-full px-2 top-1/2 -translate-y-1/2 left-2 peer-focus:text-zinc-500 text-zinc-950 transition-all select-none">linqrbell.com/</p>
                 </label>
+                <!-- username input end -->
+                <!-- password input start -->
                 <label for="userpassword" class="relative  flex items-center justify-start h-10 ">
                     <input v-model="userForm.password" class="px-3 bg-white h-12 pl-32 w-full md:w-96 rounded-lg peer focus:outline-2 outline-lime-400 transition-all placeholder:text-zinc-500 text-zinc-950 focus:text-zinc-500" type="text" id="userpassword" placeholder="******">
                     <p :class="{'!text-zinc-500':userForm.password=='', '!bg-white   ':userForm.password !='',}" class="absolute leading-10  w-28 bg-lime-400  h-full px-2 top-1/2 -translate-y-1/2 left-2 peer-focus:text-zinc-500 text-zinc-950 transition-all select-none">password : </p>
                 </label>
+                <!-- password input end -->
                 <label for="usermail" class="relative  flex items-center justify-start h-10  " >
                     <input v-model="userForm.mail"   class="px-3 bg-white h-12 pl-32 w-full md:w-96 rounded-lg peer  focus:outline-2 outline-lime-400 transition-all placeholder:text-zinc-500 text-zinc-950 focus:text-zinc-500" type="text" id="usermail" placeholder="your@mail.you">
                     <p :class="{'!text-zinc-500':userForm.mail=='', '!bg-white   ':userForm.mail !='',}" class="absolute leading-10  w-28 bg-lime-400  h-full px-2 top-1/2 -translate-y-1/2 left-2 peer-focus:text-zinc-500 text-zinc-950 transition-all select-none">e-mail : </p>
@@ -37,13 +41,10 @@ const userForm = reactive({
     password:"",
     mail:"",
     accept:false
-
 })
 
 const signUp =()=>{
-    const router = useRouter()
-    // router.push("/profile")
-    console.log('userForm :>> ', userForm);
+
 }
 </script>
 
