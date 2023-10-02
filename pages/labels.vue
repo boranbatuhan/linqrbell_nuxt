@@ -1,6 +1,6 @@
 <template>
-    <div class="min-h-screen border-y-[1rem] bg-amber-400 border-amber-950 font-baloobhai text-white">
-        <div class="container mx-auto mt-32 flex items-center justify-start flex-col gap-7">
+    <div class="min-h-screen border-y-[1rem] bg-amber-400 border-amber-950 font-baloobhai text-white flex items-center justify-start">
+        <div class="container mx-auto flex items-center justify-start flex-col gap-7">
             <p class="text-5xl">Supported Platforms</p>
             <!-- platform logos start -->
             <ul class="flex flex-wrap gap-4 p-4 items-start justify-start">

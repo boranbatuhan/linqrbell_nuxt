@@ -1,6 +1,6 @@
 <template>
-    <div class="min-h-screen border-y-[1rem] bg-cyan-400 border-cyan-950 font-baloobhai text-white ">
-        <div class="container mx-auto pt-32 flex items-center justify-start flex-col gap-7 w-fit">
+    <div class="min-h-screen border-y-[1rem] bg-cyan-400 border-cyan-950 font-baloobhai text-white  flex items-center justify-start ">
+        <div class="container mx-auto flex items-center justify-center flex-col gap-7 w-fit">
             <p class="text-6xl">Login </p>
             <!-- mail input start -->
             <label for="loginemail" class="relative flex items-center justify-start h-10 ">

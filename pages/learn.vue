@@ -1,6 +1,6 @@
 <template>
-    <div class="min-h-screen border-y-[1rem] bg-indigo-400 border-indigo-950 font-baloobhai text-white">
-        <div class="container mx-auto mt-32 flex items-center justify-start flex-col gap-7">
+    <div class="min-h-screen border-y-[1rem] bg-indigo-400 border-indigo-950 font-baloobhai text-white flex items-center justify-start">
+        <div class="container mx-auto flex items-center justify-start flex-col gap-7">
           <div id="mover" class="move  h-fit flex items-center justify-center">
                <div id="shaker" class=" p-2 text-black shake transition-all">{{ message }}</div>
           </div>

@@ -1,6 +1,6 @@
 <template>
-    <div class="min-h-screen border-y-[1rem] bg-lime-400 border-lime-950 font-baloobhai text-white">
-        <div class="container mx-auto flex items-center justify-start flex-col pt-32">
+    <div class="min-h-screen border-y-[1rem] bg-lime-400 border-lime-950 font-baloobhai text-white flex items-center justify-start">
+        <div class="container mx-auto flex items-center justify-start flex-col">
             <p class="text-6xl">Sign up to Linqrbell</p>
             <p class="text-base tracking-widest">fill the blank</p>
             <div class=" flex my-4 items-center justify-center flex-col gap-4 w-fit">
