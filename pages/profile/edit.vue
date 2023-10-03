@@ -75,48 +75,52 @@
 <script setup>
 import { Icon } from '@iconify/vue';
 
-
-
 const user = useUserStore().getUser
-const userr = useUserStore()
 const router = useRouter()
 const deleteAllModal = ref(false)
 const deleteLinkModal = ref(false)
 const selectDeleteLink = ref(null)
 
 
-
+// links sort 
 const sortedLinks = computed (()=>{
     const linksTemp = ref(user.links)
     return linksTemp.value.sort((a,b)=>a.index-b.index)
 })
 
-const goPage = page =>{
-    router.push(`${page}`)
-}
+// back button
 const goBack = () =>{
     router.back()
 }
-
+// delete all links
 const deleteAll=()=>{
     useUserStore().deleteAll()
     deleteAllModal.value=false
 }
+
+// link to move up
 const moveUp=(link)=>{
 useUserStore().moveUp(link)
 }
+
+// link to move down
 const moveDown=(link)=>{
     useUserStore().moveDown(link)
 }
+
+// open link delete modal
+const openDeleteLinkModal=(link)=>{
+    selectDeleteLink.value=link
+    deleteLinkModal.value= true
+}
+
+
+// link delete func
 const deleteLink=()=>{
     useUserStore().deleteLink(selectDeleteLink.value)
     selectDeleteLink.value=null
     deleteLinkModal.value= false
 
-}
-const openDeleteLinkModal=(link)=>{
-    selectDeleteLink.value=link
-    deleteLinkModal.value= true
 }
 
 
