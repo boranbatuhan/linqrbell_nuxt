@@ -1,6 +1,6 @@
 <template>
     <a :href="value.url" target="_blank">
-    <div class="link md:!w-80 !text-white my-px" :class="value.name">
+    <div class="link md:!w-80 !text-white my-px drop-shadow-lg" :class="value.name">
         <!--  logo start -->
         <div class="logo ">
             

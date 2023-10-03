@@ -1,5 +1,5 @@
 <template>
-    <div class="link" :class="value.name">
+    <div class="link" :class="props.value.name">
 
         <!-- modal save link  start -->
         <div v-if="isSave" class="bg-inherit  w-full h-full absolute top-0 left-0 z-50 flex items-center justify-center flex-wrap gap-x-4 ">
@@ -25,16 +25,16 @@
         <!--  logo start -->
         <div class="logo ">
             
-            <Icon :icon="value.name=='custom' ? 'typcn:star-full-outline' : (value.name == 'portfolio' ? 'typcn:user' : `simple-icons:${value.name}`)" class="w-full h-full" />
+            <Icon :icon="props.value.name=='custom' ? 'typcn:star-full-outline' : (props.value.name == 'portfolio' ? 'typcn:user' : `simple-icons:${props.value.name}`)" class="w-full h-full" />
         </div>
         <!--  logo end -->
         <!-- info start -->
         <div class="flex items-start justify-center flex-col transition-all" >
-            <p class="h-8 mt-2 text-center w-full">{{ value.label }}</p>
+            <p class="h-8 mt-2 text-center w-full">{{ props.value.label }}</p>
             <!-- edit start -->
             <div v-if="isEditting" class="flex items-start justify-center flex-col gap-2 text-black">
-                <input class="px-3 py-1 ring-0 border rounded-full outline-transparent focus:outline-fuchsia-950 outline-2" type="text" name="link" placeholder="new link" id="link">
-                <input class="px-3 py-1 ring-0 border rounded-full outline-transparent focus:outline-fuchsia-950 outline-2" type="text" name="label" placeholder="new label" id="label">
+                <input v-model="editValues.label" class="px-3 py-1 ring-0 border rounded-full outline-transparent focus:outline-fuchsia-950 outline-2" type="text" name="label" placeholder="new label" id="label">
+                <input v-model="editValues.link" class="px-3 py-1 ring-0 border rounded-full outline-transparent focus:outline-fuchsia-950 outline-2" type="text" name="link" placeholder="new link" id="link">
             </div>
             <!-- edit end -->
         </div>
@@ -70,7 +70,7 @@ const editValues= reactive({
     link:"",
     label:""
 })
-defineProps({
+const props = defineProps({
     value:Object
 })
 
@@ -89,8 +89,20 @@ const discardEdit=()=>{
 
 // accept save edit
 const acceptSave =()=>{
+    if(editValues.link ==""){
+        editValues.link = props.value.url
+    }
+    
+    if(editValues.label =="")
+    {
+        editValues.label = props.value.label
+    }
+    const upValue =editValues
+    useUserStore().updateLink(props.value,upValue)
     isSave.value=false
     isEditting.value=false
+    editValues.link=""
+    editValues.label=""
 
 }
 // accept discard edit

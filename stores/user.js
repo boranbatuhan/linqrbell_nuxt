@@ -51,6 +51,12 @@ export const useUserStore = defineStore('user', {
         const ind = this.user.links.indexOf(link)
         this.user.links[ind].index +=1 
         this.user.links[ind + 1].index -=1 
+      },
+      updateLink(link,newValue){
+        const ind = this.user.links.indexOf(link)
+        this.user.links[ind].url = newValue.link
+        this.user.links[ind].label = newValue.label
+
       }
     },
   })
