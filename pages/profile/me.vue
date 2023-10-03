@@ -55,6 +55,11 @@ const saveTheme = ()=> {
     useUserStore().setColorTheme(aClass.value)  
     useUserStore().setBio(tempBio.value)  
 }
+watchEffect(()=>{
+    if(tempBio.value != user.bio || aClass.value != user.theme){
+    saveText.value="Save*"
+}
+})
 </script>
 
 <style>

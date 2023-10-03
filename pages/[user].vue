@@ -23,7 +23,9 @@
             <!-- links start -->
             <li>
                 <ul>
-                    <li v-for="(link,index) in user.links" :key="index">{{ link }}</li>
+                    <li v-for="(l,index) in user.links" :key="index" class="w-full flex items-center justify-center scale-100 hover:scale-105 transition-all my-1" >
+                    <LinkTemplate :value="l"/> 
+                </li>
                 </ul>
             </li>
             <!-- links end -->

@@ -1,6 +1,6 @@
 <template>
-    <div class="min-h-screen border-y-[1rem] bg-emerald-400 border-emerald-950 font-baloobhai text-white">
-        <div class="container mx-auto flex items-start justify-center h-fit py-36 gap-4 flex-wrap">
+    <div class="min-h-screen border-y-[1rem] bg-emerald-400 border-emerald-950 font-baloobhai text-white  flex items-center justify-center">
+        <div class="container mx-auto flex items-start justify-center h-fit">
             <!-- free plan start -->
             <div class="flex text-xl items-center justify-start flex-row flex-wrap  border-2 border-emerald-950 w-96 px-5 shrink-0  bg-emerald-300 text-emerald-950 rounded-lg py-10">
                 <p class="text-3xl text-center w-full">Payment Information</p>

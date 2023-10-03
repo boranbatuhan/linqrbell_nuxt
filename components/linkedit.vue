@@ -21,19 +21,11 @@
             <button @click="isDiscard=false" class="rounded-full w-1/3 border border-black h-fit py-1 text-white scale-100 hover:scale-110 transition-all shrink-0 bg-red-500">No</button>
         </div>
         <!-- modal discard link  end -->
-        <!-- modal delete link  start -->
-        <div v-if="isDelete" class="bg-inherit  w-full h-full absolute top-0 left-0 z-50 flex items-center justify-center flex-wrap gap-x-4 ">
-            <div  class="action text-stone-200" >
-                <Icon icon="typcn:trash" class="w-full h-full" />
-            </div>
-            <p class="w-full text-center ">Do you want to delete</p>
-            <button @click="acceptDelete" class="rounded-full w-1/3 border border-black h-fit py-1 text-white scale-100 hover:scale-110 transition-all shrink-0 bg-green-500">Yes</button>
-            <button @click="isDelete=false" class="rounded-full w-1/3 border border-black h-fit py-1 text-white scale-100 hover:scale-110 transition-all shrink-0 bg-red-500">No</button>
-        </div>
-        <!-- modal delete link  end -->
+
         <!--  logo start -->
         <div class="logo ">
-            <Icon :icon="value.name !='portfolio' ? `simple-icons:${value.name}` :'fa6-solid:id-card-clip'" class="w-full h-full" />
+            
+            <Icon :icon="value.name=='custom' ? 'typcn:star-full-outline' : (value.name == 'portfolio' ? 'typcn:user' : `simple-icons:${value.name}`)" class="w-full h-full" />
         </div>
         <!--  logo end -->
         <!-- info start -->
@@ -63,10 +55,6 @@
                 <Icon icon="typcn:times" class="w-full h-full" />
             </div>
 
-            <!-- delete link -->
-            <div @click="deleteLink" v-if="isEditting" class="action hover:text-stone-200" >
-                <Icon icon="typcn:trash" class="w-full h-full" />
-            </div>
         </div>
         <!-- buttons end -->
     </div>
@@ -76,7 +64,6 @@
 import { Icon } from '@iconify/vue';
 
 const isEditting = ref(false)
-const isDelete = ref(false)
 const isSave = ref(false)
 const isDiscard = ref(false)
 const editValues= reactive({
@@ -96,28 +83,23 @@ const saveEdit=()=>{
 const discardEdit=()=>{
     isDiscard.value=true
 }
-// delete link
-const deleteLink =()=>{
-    isDelete.value=true
-}
+
 
 
 
 // accept save edit
 const acceptSave =()=>{
     isSave.value=false
+    isEditting.value=false
 
 }
 // accept discard edit
 const acceptDiscard =()=>{
     isDiscard.value=false
+    isEditting.value=false
 
 }
-// accept delete link
-const acceptDelete =()=>{
-    isDelete.value=false
 
-}
 </script>
 
 <style>
