@@ -33,12 +33,12 @@
         <div class="flex items-center justify-start flex-col mx-auto container">
             
             <ul v-auto-animate class="flex flex-col items-center justify-center gap-4 my-7 w-full px-2" >
-                <li class="flex items-center justify-between w-full md:w-fit">
+                <li class="flex items-center justify-between w-full md:w-fit ml-8 mr-10">
                     <button @click="goBack" class="px-3 h-8 w-full md:w-44 py-1 rounded-2xl font-bold bg-fuchsia-950 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all flex items-center justify-center gap-2"><Icon class="h-full w-fit"  icon="typcn:arrow-back"/>Back</button>
                     <button @click="deleteAllModal=true" class="px-3 h-8 w-full md:w-44 py-1 rounded-2xl font-bold bg-fuchsia-950 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all flex items-center justify-center gap-2"><Icon class="h-full w-fit"  icon="typcn:delete"/>Delete All</button>
                 </li>
                 <!-- ADD NEW START -->
-                <li class="w-full ">
+                <li class="w-full ml-8 mr-10">
                    <linknew/>
                 </li>
                 <!-- ADD NEW END -->
@@ -59,7 +59,7 @@
                     <linkedit :value="l" v-auto-animate />
 
                     <!-- delete start -->
-                    <div @click="openDeleteLinkModal(l)" class="relative group flex items-center justify-center ">
+                    <div @click="openDeleteLinkModal(l)" class="relative group flex items-center justify-center w-10 ">
                         <span class="absolute w-10 h-10 rounded-lg scale-0 bg-fuchsia-950 group-hover:scale-100 transition-all origin-center"></span>
                         <Icon icon="typcn:trash" class=" relative h-10 w-10 text-fuchsia-950  group-hover:text-fuchsia-400 cursor-pointer"/>
                     </div>
