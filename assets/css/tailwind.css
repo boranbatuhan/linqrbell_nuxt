@@ -54,17 +54,17 @@
 /* GITHUB */
 .github{
     @apply
-    !bg-zinc-900
+    !bg-[#0d1117]
 }
 /* LINKEDIN */
 .linkedin{
     @apply
-    !bg-blue-900
+    !bg-[#0a66c2]
 }
 /* youtube */
 .youtube{
     @apply
-    !bg-red-900
+    !bg-[#FF0000]
 }
 /* PORTFOLIO */
 .portfolio{

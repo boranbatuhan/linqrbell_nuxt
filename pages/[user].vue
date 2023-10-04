@@ -14,7 +14,10 @@
                         <Icon icon="typcn:cog" class="w-full h-full scale-100 group-hover:scale-150 transition-all"/>
                     </div>
                 </nuxt-link>
-                <div class="rounded-full border border-black bg-white  w-20 h-20"></div>
+                <div class="rounded-full border border-black bg-white  w-20 h-20 p-2 overflow-hidden">
+                    <img draggable="false" src="~~/assets/imgs/logo_big.png" alt="starlogo" class="w-full h-full ">
+                    
+                </div>
                 <p class="text-5xl text-outline-black-thin  tracking-wider">{{ route.params.user }}</p>
             </li>
             <!-- photo end -->
