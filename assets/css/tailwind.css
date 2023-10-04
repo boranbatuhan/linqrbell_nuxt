@@ -130,3 +130,30 @@
     @apply
     !text-rose-700 !bg-rose-500 !border-rose-950
 }
+
+
+
+/* FOR LINKS  */
+
+/* BASE LINK */
+.link{
+    @apply
+    border border-black md:rounded-full rounded-md
+    md:px-10 md:py-2 px-1 py-2
+    flex items-center justify-between gap-4 
+    max-w-[25rem]  min-h-[4rem]  w-full
+
+    font-baloobhai 
+    relative overflow-hidden
+}
+
+.logo{
+    @apply
+    hover:scale-125 scale-100 transition-all  h-10 w-10 aspect-square 
+}
+.action{
+    @apply
+    hover:scale-125 scale-100 transition-all  h-8 aspect-square
+    flex items-center justify-center gap-2
+}
+

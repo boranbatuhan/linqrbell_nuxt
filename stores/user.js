@@ -33,6 +33,9 @@ export const useUserStore = defineStore('user', {
       setBio(bioValue){
         this.user.bio = bioValue
       },
+      setName(bioValue){
+        this.user.name = bioValue
+      },
       deleteLink(link){
         this.user.links = this.user.links.filter(i => i!=link)
         for (let i = 0; i < this.user.links.length; i++) {

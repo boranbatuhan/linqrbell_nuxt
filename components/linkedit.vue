@@ -29,11 +29,11 @@
         </div>
         <!--  logo end -->
         <!-- info start -->
-        <div class="flex items-start justify-center flex-col transition-all" >
-            <p class="h-8 mt-2 text-center w-full">{{ props.value.label }}</p>
+        <div class="flex items-start justify-center flex-col w-full transition-all" >
+            <p class="h-8 mt-2 text-center w-full  truncate">{{ props.value.label }}</p>
             <!-- edit start -->
             <div v-if="isEditting" class="flex items-start justify-center flex-col gap-2 text-black">
-                <input v-model="editValues.label" class="px-3 py-1 ring-0 border rounded-full outline-transparent focus:outline-fuchsia-950 outline-2" type="text" name="label" placeholder="new label" id="label">
+                <input v-model="editValues.label" class="px-3 py-1 ring-0 border rounded-full outline-transparent focus:outline-fuchsia-950 outline-2" type="text" name="label" placeholder="new label" maxlength="16" id="label">
                 <input v-model="editValues.link" class="px-3 py-1 ring-0 border rounded-full outline-transparent focus:outline-fuchsia-950 outline-2" type="text" name="link" placeholder="new link" id="link">
             </div>
             <!-- edit end -->
@@ -115,29 +115,6 @@ const acceptDiscard =()=>{
 </script>
 
 <style>
-
-
-/* BASE LINK */
-.link{
-    @apply
-    border border-black md:rounded-full rounded-md
-    md:px-10 md:py-2 px-1 py-2
-    flex items-center justify-between gap-4 
-    max-w-[25rem]  h-fit  w-full
-
-    font-baloobhai 
-    relative overflow-hidden
-}
-
-.logo{
-    @apply
-    hover:scale-125 scale-100 transition-all  h-8 aspect-square 
-}
-.action{
-    @apply
-    hover:scale-125 scale-100 transition-all  h-8 aspect-square
-    flex items-center justify-center gap-2
-}
 
 
 </style>

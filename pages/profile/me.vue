@@ -1,7 +1,10 @@
 <template>
     <div :class="aClass" class="min-h-screen border-y-[1rem]  font-baloobhai  ">
-        <div class="container mx-auto flex items-center justify-center flex-col mt-32 py-10">
-            <p class="text-4xl my-4 underline underline-offset-8"> hi {{ user.name }} !</p>
+        <div class="container mx-auto flex items-center justify-center flex-col mt-32 py-10 ">
+            <label for="username" class="relative text-4xl w-80 ">
+                <p class="text-center  w-12  absolute top-1/2 -translate-y-1/2 left-0">Hi</p>
+                <input id="username"  v-model="tempName" type="text" class=" pl-16  p-2 truncate text-start  focus:text-center w-full h-full focus:outline-inherit !bg-inherit  focus:!bg-white hover:!bg-white/20 rounded-lg transition-all" spellcheck="false">
+            </label>
             <p class="text-outline-white-thin tracking-widest text-xl">{{ user.uid }}</p>
             
             <div class="relative">
@@ -15,7 +18,7 @@
                         Show me
                     </button>
                 </nuxt-link>
-                <button @click="saveTheme" class="flex items-center w-full basis-1/2 justify-center gap-2 h-8 bg-white rounded-lg border border-black text-black px-3 py-1 scale-100 hover:scale-105 transition-all">
+                <button :disabled="saveDisable" @click="saveChanges" class="flex items-center w-full basis-1/2 justify-center gap-2 h-8 disabled:opacity-25 disabled:pointer-events-none bg-white rounded-lg border border-black text-black px-3 py-1 scale-100 hover:scale-105 transition-all">
                     <Icon icon="typcn:tick" class="h-full w-fit"/>
                     {{ saveText }}
                 </button>
@@ -43,22 +46,28 @@ import { Icon } from '@iconify/vue';
 const user = useUserStore().getUser
 const aClass= ref(user.theme)
 const tempBio= ref(user.bio)
+const tempName= ref(user.name)
 const saveText= ref("Save")
+const saveDisable= ref(true)
 const setTheme = setCls => {
       aClass.value=setCls
 }
-const saveTheme = ()=> {
+const saveChanges = ()=> {
     saveText.value="Saved !"
         setTimeout(() => {
             saveText.value="Save"
+            saveDisable.value = true
+
         }, 1000);
     useUserStore().setColorTheme(aClass.value)  
     useUserStore().setBio(tempBio.value)  
+    useUserStore().setName(tempName.value)  
 }
 watchEffect(()=>{
-    if(tempBio.value != user.bio || aClass.value != user.theme){
-    saveText.value="Save*"
-}
+    if(tempBio.value != user.bio || aClass.value != user.theme || tempName.value != user.name){
+        saveText.value="Save*"
+        saveDisable.value = false
+    }
 })
 </script>
 

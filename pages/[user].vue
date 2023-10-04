@@ -6,16 +6,23 @@
         <div @click="goHome()" class="w-6 h-6 absolute top-6 left-2 hover:w-10 hover:h-10 select-none cursor-pointer hover:rotate-45 transition-all">
             <img draggable="false" src="~~/assets/imgs/star.png" alt="starlogo" class="w-full h-full ">
        </div> 
-        <ul class="py-10 flex justify-start gap-7 flex-col items-center">
+        <ul class="py-10 flex justify-start flex-col items-center ">
             <!-- photo start -->
-            <li class="flex items-center justify-center flex-col text-center gap-4">
+            <li class="flex items-center justify-center w-full flex-col text-center gap-4 my-3 relative">
+                <nuxt-link to="/profile">
+                    <div class="h-6 w-6 absolute top-0 right-0 hover:text-white group">
+                        <Icon icon="typcn:cog" class="w-full h-full scale-100 group-hover:scale-150 transition-all"/>
+                    </div>
+                </nuxt-link>
                 <div class="rounded-full border border-black bg-white  w-20 h-20"></div>
                 <p class="text-5xl text-outline-black-thin  tracking-wider">{{ route.params.user }}</p>
             </li>
             <!-- photo end -->
-
+            <li>
+                <p class="text-sm tracking-wider">{{ user.name }}</p>
+            </li>
             <!-- bio start -->
-            <li class="w-80 text-sm text-center">
+            <li class="w-80 text-sm text-center my-3">
                 <p>{{ user.bio }}</p>
             </li>
             <!-- bio end -->
@@ -36,6 +43,8 @@
 </template>
 
 <script setup>
+import { Icon } from '@iconify/vue';
+
 const route = useRoute()
 const router = useRouter()
 const user = useUserStore().getUser

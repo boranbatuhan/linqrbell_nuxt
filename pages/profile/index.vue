@@ -1,7 +1,10 @@
 <template>
     <div class="min-h-screen border-y-[1rem] bg-fuchsia-400 border-fuchsia-950 flex items-center justify-center flex-col text-white">
         <div class="container flex items-center justify-center flex-col mx-auto">
-            <p class="text-6xl ml-2 md:ml-0 font-baloobhai mb-7"> Welcome <strong class="font-glassAntiqua">{{ user.name }}</strong></p>
+            <div class="flex gap-2 md:flex-row flex-col w-full items-center justify-center">
+                <p class="text-6xl ml-2 md:ml-0 font-baloobhai mb-7 w-full text-end "> Welcome </p>
+                <p class="font-glassAntiqua text-6xl text-start ml-2 md:ml-0 mb-7 w-full truncate">{{ user.name }}</p>
+            </div>
         <p class="text-3xl ml-2 md:ml-0 font-baloobhai mb-7"> You have {{ user.links.length }} links in <strong @click="user.isPremium = !user.isPremium" class="text-outline-white-thin text-fuchsia-400 tracking-wider">{{ user.uid }}</strong></p>
         <!-- buttons start -->
         <div class="flex md:items-center md:justify-center  flex-row  items-start justify-start w-full md:gap-7 gap-1">
