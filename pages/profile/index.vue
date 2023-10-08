@@ -9,18 +9,31 @@
         <!-- buttons start -->
         <div class="flex md:items-center md:justify-center  flex-row  items-start justify-start w-full md:gap-7 gap-1">
             <div>
-                <button @click="goPage('/pricing')" class="px-3 h-8 md:w-44 w-full py-1 rounded-lg font-bold bg-fuchsia-950 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all flex items-center justify-center gap-2"><Icon class="h-full w-fit"  icon="typcn:arrow-up-thick"/>{{ user.isPremium ? 'Set Premium*' : 'Be a Premium*' }}</button>
+                <nuxt-link to="/pricing">
+                    <button class="px-3 h-8 md:w-44 w-full py-1 rounded-lg font-bold bg-fuchsia-950 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all flex items-center justify-center gap-2"><Icon class="h-full w-fit"  icon="typcn:arrow-up-thick"/>{{ user.isPremium ? 'Set Premium*' : 'Be a Premium*' }}</button>
+                </nuxt-link>
                 <p class="text-end md:mr-7 mr-auto text-xs">*See pricing page for more</p>
             </div>
             <div>
-                <button @click="goPage('/profile/edit')" class="px-3 h-8 md:w-44 w-full py-1 rounded-lg font-bold bg-fuchsia-950 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all flex items-center justify-center gap-2"><Icon class="h-full w-fit"  icon="typcn:link"/>Edit Links</button>
+                <nuxt-link to="/profile/edit">
+                    <button class="px-3 h-8 md:w-44 w-full py-1 rounded-lg font-bold bg-fuchsia-950 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all flex items-center justify-center gap-2"><Icon class="h-full w-fit"  icon="typcn:link"/>Edit Links</button>
+                </nuxt-link>
                 <p class="text-end md:mr-7 mr-auto text-xs">*Your limit {{ user.isPremium ? `${user.links.length} / 99` : `${user.links.length} / 10` }}</p>
             </div>
             
         </div>
         <div class="my-7 flex md:items-center md:justify-center items-start justify-center w-full md:gap-7 gap-4 flex-col md:flex-row">
-            <button @click="goPage(`/${user.uid}`)" class="px-3 h-8  py-1 rounded-lg font-bold bg-fuchsia-950  md:w-52 w-11/12 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all flex items-center justify-center gap-2"><Icon class="h-full w-fit"  icon="typcn:user"/> Show Profile</button>
-            <button @click="goPage(`/profile/me`)" class="px-3 h-8  py-1 rounded-lg font-bold bg-fuchsia-950  md:w-52 w-11/12 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all flex items-center justify-center gap-2"><Icon class="h-full w-fit"  icon="typcn:edit"/> Edit Profile</button>
+            <nuxt-link :to="`/${user.uid}`">
+                <button class="px-3 h-8  py-1 rounded-lg font-bold bg-fuchsia-950  md:w-52 w-11/12 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all flex items-center justify-center gap-2"><Icon class="h-full w-fit"  icon="typcn:user"/> Show Profile</button>
+            </nuxt-link>
+            <nuxt-link to="/profile/me">
+                <button class="px-3 h-8  py-1 rounded-lg font-bold bg-fuchsia-950  md:w-52 w-11/12 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all flex items-center justify-center gap-2"><Icon class="h-full w-fit"  icon="typcn:edit"/> Edit Profile</button>
+            </nuxt-link>
+        </div>
+        <div class="mb-7 flex md:items-center md:justify-center items-start justify-center w-full md:gap-7 gap-4 flex-col md:flex-row">
+            <nuxt-link to="/profile/qrcode">
+                <button  class="px-3 h-8  py-1 rounded-lg font-bold bg-fuchsia-950  md:w-52 w-11/12 text-fuchsia-300 mx-4 border-2 hover:border-fuchsia-950 hover:bg-fuchsia-500 border-transparent transition-all flex items-center justify-center gap-2"><Icon class="h-full w-fit"  icon="gg:square"/> QR Code</button>
+            </nuxt-link>
         </div>
         <!-- buttons end -->
         </div>
@@ -32,13 +45,6 @@
 <script setup>
 import { Icon } from '@iconify/vue';
 const {user} = useUserStore()
-
-const router = useRouter()
-
-const goPage = page =>{
-    
-    router.push(`${page}`)
-}
 
 </script>
 

@@ -12,7 +12,14 @@ export const useUserStore = defineStore('user', {
             ],
             bio:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque est quibusdam rerum ut impedit veritatis.",
             isPremium:false,
-            theme:"blue"
+            theme:"blue",
+            qr:{
+              isDark:true,
+              bgColor:"#ffffff",
+              dotColor:"#b50084",
+              rctColor:"#00bbc7",
+              rctDotColor:"#b50084",
+            }
             
             }
 
@@ -59,7 +66,9 @@ export const useUserStore = defineStore('user', {
         const ind = this.user.links.indexOf(link)
         this.user.links[ind].url = newValue.link
         this.user.links[ind].label = newValue.label
-
+      },
+      updateQr(newValue){
+        this.user.qr = newValue
       }
     },
   })

@@ -1,6 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true,
+    },
+  },
   modules: [
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
@@ -19,6 +25,6 @@ export default defineNuxtConfig({
       meta:[{name:'description',content:'Linqrbell is a website that gathers all the links together and makes your work easier.'}],
       link:[{rel:'icon',href:'/logo.png'}]
     }
-    }
+    },
 
 })
