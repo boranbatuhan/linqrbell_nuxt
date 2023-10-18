@@ -44,8 +44,8 @@
                     <div class="rounded-full w-3 h-5 m-4" :style="`background:${qrTemp.dotColor}`"></div>
                 </div>
 
-                <img draggable="false" src="../../logo.png" class="w-16 h-16 relative select-none" alt="dark" v-if="qrTemp.isDark" >
-                <img draggable="false" src="../../logo-white.png" class="w-16 h-16 relative select-none" alt="dark" v-if="!qrTemp.isDark" >
+                <img draggable="false" src="~~/assets/imgs//logo.png" class="w-16 h-16 relative select-none" alt="dark" v-if="qrTemp.isDark" >
+                <img draggable="false" src="~~/assets/imgs//logo-white.png" class="w-16 h-16 relative select-none" alt="dark" v-if="!qrTemp.isDark" >
 
             </div>
             <!-- colors temp end -->
@@ -59,11 +59,11 @@
             <div class="w-full flex items-center justify-center flex-row gap-6 font-baloobhai flex-wrap">
                 <label class=" w-fit shrink-0 flex">Icon Color: 
                 <label for="dark">
-                    <img draggable="false" src="../../logo.png" class="w-8 h-8 transition-all select-none cursor-pointer" alt="dark" :class="{'-translate-y-2 opacity-100' : qrTemp.isDark==true,'-translate-y-0 opacity-40' : qrTemp.isDark==false}">
+                    <img draggable="false" src="~~/assets/imgs//logo.png" class="w-8 h-8 transition-all select-none cursor-pointer" alt="dark" :class="{'-translate-y-2 opacity-100' : qrTemp.isDark==true,'-translate-y-0 opacity-40' : qrTemp.isDark==false}">
                     <input type="radio" name="isDark" v-model="qrTemp.isDark" class="hidden" :value="true" id="dark">
                 </label>
                 <label for="light">
-                    <img draggable="false" src="../../logo-white.png" class="w-8 h-8 transition-all select-none cursor-pointer" alt="light" :class="{'-translate-y-2 opacity-100' : qrTemp.isDark==false,'-translate-y-0 opacity-40' : qrTemp.isDark==true}">
+                    <img draggable="false" src="~~/assets/imgs//logo-white.png" class="w-8 h-8 transition-all select-none cursor-pointer" alt="light" :class="{'-translate-y-2 opacity-100' : qrTemp.isDark==false,'-translate-y-0 opacity-40' : qrTemp.isDark==true}">
                     <input type="radio" name="isDark" v-model="qrTemp.isDark" class="hidden" :value="false" id="light">
                 </label>
             </label>
@@ -90,7 +90,7 @@
 <script setup>
 import { Icon } from '@iconify/vue';
 const user = useUserStore().getUser 
-const userlink =ref(`https://linqrbell.com/qr/${user.uid}`)
+const userlink =ref(`https://linqrbell.vercel.app/${user.uid}`)
 const showing = ref (true)
 const qrTemp = reactive({
     isDark:true,
